@@ -34,36 +34,33 @@ export default function Home() {
   };
 
   return (
-    <main style={{ padding: 20 }}>
-      <h1>Infops Maʼlumot Kiritish</h1>
-      <form
-        onSubmit={handleSubmit}
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: 10,
-          width: 300,
-        }}
-      >
+    <main className="p-4 w-full h-screen flex flex-col items-center justify-center">
+      <h1 className="text-2xl font-bold mb-4">Infops Maʼlumot Kiritish</h1>
+      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <input
           name="yangi_lid"
           placeholder="Yangi lid"
           value={formData.yangi_lid}
           onChange={handleChange}
+          className="border px-2 py-1 rounded w-[400px]"
         />
         <input
           name="shartnoma_oldi"
           placeholder="Shartnoma oldi"
           value={formData.shartnoma_oldi}
           onChange={handleChange}
+          className="border px-2 py-1 rounded w-[400px]"
         />
         <input
           name="tolov"
           placeholder="To‘lov"
           value={formData.tolov}
           onChange={handleChange}
-        />
-        <button type="submit">Yuborish</button>
+          className="border px-2 py-1 rounded w-[400px]"
+          />
+        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded w-[400px]">
+          Yuborish
+        </button>
       </form>
     </main>
   );

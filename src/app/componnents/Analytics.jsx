@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { supabase } from "../../lib/supabaseClient";
+import { supabase } from "@/lib/supabaseClient";
 import {
   BarChart,
   Bar,
@@ -97,11 +97,7 @@ export default function Dashboard() {
   };
 
   return (
-    <div style={{ padding: 20 }}>
-      <h2 className="text-xl font-bold mb-4">
-        📊 Kunlik Statistika (oy tanlash bilan)
-      </h2>
-
+    <div style={{ padding: 20, width: "100%" }}>
       <div className="mb-4">
         <label className="mr-2 font-semibold">Oy tanlang:</label>
         <input
@@ -115,8 +111,7 @@ export default function Dashboard() {
       <div style={{ overflowX: "auto" }}>
         <div style={{ minWidth: data.length * 50 }}>
           <BarChart width={data.length * 50} height={550} data={data}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="date" angle={-45} textAnchor="end" height={70} />
+            <XAxis dataKey="date" angle={-45} textAnchor="end" height={70} className="mb-4" />
             <YAxis />
             <Tooltip />
             <Legend />
@@ -125,7 +120,7 @@ export default function Dashboard() {
               dataKey="shartnoma_oldi"
               fill="#0000f6"
               name="Shartnoma oldi"
-            />
+              />
             <Bar dataKey="tolov" fill="#ed0000" name="To‘lov" />
           </BarChart>
         </div>
