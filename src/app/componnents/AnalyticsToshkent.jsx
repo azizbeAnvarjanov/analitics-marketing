@@ -27,7 +27,7 @@ function getAllDaysInMonth(year, month) {
   return result;
 }
 
-export default function Dashboard() {
+export default function AnalyticsToshkent() {
   const [data, setData] = useState([]);
   const [selectedMonth, setSelectedMonth] = useState(() => {
     const now = new Date();
@@ -43,7 +43,7 @@ export default function Dashboard() {
       const month = Number(monthStr) - 1;
 
       const { data: rows, error } = await supabase
-        .from("infos")
+        .from("infos_toshkent")
         .select("yangi_lid, shartnoma_oldi, tolov, created_at")
         .gte("created_at", `${selectedMonth}-01`)
         .lt(
